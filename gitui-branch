@@ -7,6 +7,8 @@ git branch \
     | fzf +m \
     --style full \
     --reverse \
+    --border \
+    --border-label " gitui - Branches " \
     --preview="git show --color=always {-1}" \
     --bind "enter:execute-silent(gitui-branch-change {-1})+reload($get_branches)" \
     --bind "backspace:execute(gitui-branch-delete {-1})+reload($get_branches)"

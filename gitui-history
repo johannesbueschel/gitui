@@ -3,4 +3,6 @@
 git log --oneline | fzf \
     --style full -0 +m \
     --reverse \
+    --border \
+    --border-label " gitui - History " \
     --preview='git show --color=always {1}'

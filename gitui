@@ -9,6 +9,8 @@ options="[1] Working Directory - gitui-working
 selected=$(echo "$options" | fzf +m \
     --style full \
     --reverse \
+    --border \
+    --border-label " gitui - git TUI " \
     --bind "enter:execute({-1})" \
     --bind "1:execute(gitui-working)" \
     --bind "2:execute(gitui-index)" \
