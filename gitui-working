@@ -15,6 +15,7 @@ git status --short \
     --reverse \
     --border \
     --border-label " gitui - Working directory " \
+    --preview-window wrap \
     --preview="gitui-preview-working {}" \
     --bind "enter:execute-silent(git add {})+reload($get_files)" \
     --bind "ctrl-r:reload($get_files)" \
