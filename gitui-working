@@ -23,5 +23,4 @@ git status --short \
     --bind "ctrl-i:become(gitui-index)" \
     --bind "ctrl-p:execute(git add -p {})+reload($get_files)" \
     --bind "ctrl-e:execute($EDITOR {})+reload($get_files)" \
-    --bind "ctrl-delete:execute(gitui-discard-changes {})+reload($get_files)"
-    #Backspace is a problem for the search, you dummy
+    --bind "delete:execute(gitui-discard-changes {})+reload($get_files)"
