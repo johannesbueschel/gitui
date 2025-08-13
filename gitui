@@ -2,8 +2,9 @@
 
 options="1 Working Directory - gitui-working
 2 Index - gitui-index
-3 Branch - gitui-branch
-4 History - gitui-history"
+3 Commit - gitui-commit
+4 Branch - gitui-branch
+5 History - gitui-history"
 
 selected=$(echo "$options" | fzf \
     --style full \
