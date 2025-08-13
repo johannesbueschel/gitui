@@ -12,6 +12,5 @@ if [[ $is_mod == "true" ]]; then
 fi
 
 if [[ $is_deleted == "true" ]]; then
-    # Can we improve this?
-    echo "File deleted"
+    git diff --color=always --cached -- "$1"
 fi

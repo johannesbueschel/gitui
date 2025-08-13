@@ -17,6 +17,5 @@ if [[ $is_new == "true" ]]; then
 fi
 
 if [[ $is_deleted == "true" ]]; then
-    # Can we improve this?
-    echo "File deleted"
+    git diff --color=always -- "$1"
 fi
