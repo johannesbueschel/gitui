@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Shows the staged files
+get_files="git status --short \
+    | awk '/^A  |^AM |^MM |^D  / {print}' \
+    | cut -c 4- \
+    | sed 's/\"//g'"
+
+git status --short \
+    | awk '/^A  |^AM |^MM |^D  / {print}' \
+    | cut -c 4- \
+    | sed 's/"//g' \
+    | fzf \
+    --style full -0 +m \
+    --reverse \
+    --preview="gitui-preview-index {}" \
+    --bind "enter:execute(git restore --staged {})+reload($get_files),ctrl-p:execute(git restore --staged -p {})+reload($get_files)"
