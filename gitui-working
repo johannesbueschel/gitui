@@ -20,4 +20,5 @@ git status --short \
     --bind "ctrl-r:reload($get_files)" \
     --bind "ctrl-i:become(gitui-index)" \
     --bind "ctrl-p:execute(git add -p {})+reload($get_files)" \
+    --bind "ctrl-e:execute(nvim {})+reload($get_files)" \
     --bind "backspace:execute(gitui-discard-changes {})+reload($get_files)"
