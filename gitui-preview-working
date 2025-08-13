@@ -2,18 +2,21 @@
 
 file_state=$(git status --short "$1" | cut -c 1-3)
 
-is_mod=$(echo "$file_state" | awk '/ M |MM |AM | D / {print "true"}')
+is_mod=$(echo "$file_state" | awk '/ M |MM |AM / {print "true"}')
 is_new=$(echo "$file_state" | awk '/\?\? / {print "true"}')
+is_deleted=$(echo "$file_state" | awk '/ D / {print "true"}')
 
 #partially added missing
 
-echo "[WORKING]"
-echo ""
-
 if [[ $is_mod == "true" ]]; then
-    git diff "$1"
+    git diff --color=always "$1"
 fi
 
 if [[ $is_new == "true" ]]; then
-    less "$1"
+    git diff --color=always --no-index /dev/null "$1"
+fi
+
+if [[ $is_deleted == "true" ]]; then
+    # Can we improve this?
+    echo "File deleted"
 fi

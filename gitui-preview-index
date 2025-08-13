@@ -8,13 +8,11 @@ is_new=$(echo "$file_state" | awk '/\?\? / {print "true"}') #??
 
 #partially added missing
 
-echo "[INDEX]"
-echo ""
-
 if [[ $is_mod == "true" ]]; then
-    git diff --staged "$1"
+    git diff --color=always --staged "$1"
 fi
 
 if [[ $is_deleted == "true" ]]; then
-    echo "File deleted ..."
+    # Can we improve this?
+    echo "File deleted"
 fi
