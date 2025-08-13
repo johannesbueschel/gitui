@@ -9,6 +9,16 @@ then
 
     if [[ "$response" =~ ^[Yy]$ ]]
     then
-        git restore "$1"
+        file_status=$(git status --short "$1")
+        is_mod=$(echo "$file_status" | awk '/^?M / {print "true"}')
+        is_untracked=$(echo "$file_status" | awk '/^\?\? / {print "true"}')
+
+        if [[ "$is_mod" == "true" ]]
+        then
+            git restore "$1"
+        elif [[ "$is_untracked" == "true" ]]
+        then
+            rm "$1"
+        fi
     fi
 fi
