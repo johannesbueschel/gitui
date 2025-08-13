@@ -6,10 +6,9 @@ options="[1] Working Directory - gitui-working
 [4] Branch - gitui-branch
 [5] History - gitui-history"
 
-selected=$(echo "$options" | fzf \
+selected=$(echo "$options" | fzf +m \
     --style full \
     --reverse \
-    +m \
     --bind "enter:execute({-1})" \
     --bind "1:execute(gitui-working)" \
     --bind "2:execute(gitui-index)" \
