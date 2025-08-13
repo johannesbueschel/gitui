@@ -1,0 +1,6 @@
+#!/bin/bash
+
+git checkout "$1"
+#Make this configurable!?
+ticket=$(echo "$1" | awk -F'/' '{print $2}' | awk -F'-' '{print "["toupper($1)"-"$2"] "}')
+echo "$ticket" > .git/commit_msg_template.txt

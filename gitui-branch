@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Shows selection of available local branches
-branch=$(git branch --format "%(refname:short)" | awk '! /\*/' | fzf \
-    --style full +m \
+get_branches="git branch"
+
+git branch \
+    | fzf +m \
+    --style full \
     --reverse \
-    --preview='git show --color=always {-1}') &&
-git checkout $branch
-ticket=$(echo $branch | awk -F'/' '{print $2}' | awk -F'-' '{print "["toupper($1)"-"$2"] "}')
-echo "$ticket" > .git/commit_msg_template.txt
+    --preview="git show --color=always {-1}" \
+    --bind "enter:execute-silent(gitui-branch-change {-1})+reload($get_branches)"
