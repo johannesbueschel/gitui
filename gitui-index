@@ -14,4 +14,5 @@ git status --short \
     --style full +m \
     --reverse \
     --preview="gitui-preview-index {}" \
-    --bind "enter:execute(git restore --staged {})+reload($get_files),ctrl-p:execute(git restore --staged -p {})+reload($get_files)"
+    --bind "enter:execute(git restore --staged {})+reload($get_files)" \
+    --bind "ctrl-p:execute(git restore --staged -p {})+reload($get_files)"
