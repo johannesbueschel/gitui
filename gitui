@@ -1,13 +1,18 @@
 #!/bin/bash
 
-options="1 Working Directory - gitui-working
-2 Index - gitui-index
-3 Commit - gitui-commit
-4 Branch - gitui-branch
-5 History - gitui-history"
+options="[1] Working Directory - gitui-working
+[2] Index - gitui-index
+[3] Commit - gitui-commit
+[4] Branch - gitui-branch
+[5] History - gitui-history"
 
 selected=$(echo "$options" | fzf \
     --style full \
     --reverse \
     +m \
-    --bind "enter:execute({-1})")
+    --bind "enter:execute({-1})" \
+    --bind "1:execute(gitui-working)" \
+    --bind "2:execute(gitui-index)" \
+    --bind "3:execute(gitui-commit)" \
+    --bind "4:execute(gitui-branch)" \
+    --bind "5:execute(gitui-history)")
