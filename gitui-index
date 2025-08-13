@@ -17,4 +17,7 @@ git status --short \
     --border-label " gitui - Index " \
     --preview="gitui-preview-index {}" \
     --bind "enter:execute(git restore --staged {})+reload($get_files)" \
-    --bind "ctrl-p:execute(git restore --staged -p {})+reload($get_files)"
+    --bind "ctrl-p:execute(git restore --staged -p {})+reload($get_files)" \
+    --bind "ctrl-r:reload($get_files)" \
+    --bind "ctrl-w:become(gitui-working)" \
+    --bind "ctrl-c:execute(git commit -v)+reload($get_files)"
