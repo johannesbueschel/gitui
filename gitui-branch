@@ -8,4 +8,5 @@ git branch \
     --style full \
     --reverse \
     --preview="git show --color=always {-1}" \
-    --bind "enter:execute-silent(gitui-branch-change {-1})+reload($get_branches)"
+    --bind "enter:execute-silent(gitui-branch-change {-1})+reload($get_branches)" \
+    --bind "backspace:execute(gitui-branch-delete {-1})+reload($get_branches)"
