@@ -1,0 +1,12 @@
+#!/bin/bash
+
+options="1 Working Directory - gitui-working
+2 Index - gitui-index
+3 Branch - gitui-branch
+4 History - gitui-history"
+
+selected=$(echo "$options" | fzf \
+    --style full \
+    --reverse \
+    +m \
+    --bind "enter:execute({-1})")

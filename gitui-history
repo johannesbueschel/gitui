@@ -1,0 +1,6 @@
+#!/bin/bash
+
+git log --oneline | fzf \
+    --style full -0 +m \
+    --reverse \
+    --preview='git show {1}'
