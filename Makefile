@@ -20,14 +20,20 @@ help:
 	@echo "$$HELP_BODY"
 
 
-install: $(SCRIPTS_AT_INSTALL_PATH)
+.PHONY: checkfzf
+checkfzf:
+    ifeq (, $(shell command -v fzf))
+	    $(error fzf needs to be installed (https://junegunn.github.io/fzf).)
+    endif
+
+install: checkfzf $(SCRIPTS_AT_INSTALL_PATH)
 
 ~/.local/bin/%: %
 	@echo Install $<
 	@cp ./$< $@
 
 
-install-links: $(SCRIPTS_AT_INSTALL_PATH:=_ln)
+install-links: checkfzf $(SCRIPTS_AT_INSTALL_PATH:=_ln)
 
 ~/.local/bin/%_ln: %
 	@echo Install $< as link
