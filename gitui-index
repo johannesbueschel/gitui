@@ -10,8 +10,9 @@ git status --short \
     | awk '/^A  |^AM |^MM |^D  |^M  / {print}' \
     | cut -c 4- \
     | sed 's/"//g' \
-    | fzf \
-    --style full +m \
+    | fzf +m \
+    --style full \
+    --keep-right \
     --reverse \
     --border \
     --border-label " gitui - Index " \
