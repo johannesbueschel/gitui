@@ -20,4 +20,5 @@ git status --short \
     --bind "ctrl-p:execute(git restore --staged -p {})+reload($get_files)" \
     --bind "ctrl-r:reload($get_files)" \
     --bind "ctrl-w:become(gitui-working)" \
-    --bind "ctrl-c:execute(git commit -v)+reload($get_files)"
+    --bind "ctrl-c:execute(git commit -v -q)+reload($get_files)" \
+    --bind "ctrl-a:execute(git commit -v -q --amend)+reload($get_files)"
