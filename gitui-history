@@ -5,4 +5,6 @@ git log --oneline | fzf \
     --reverse \
     --border \
     --border-label " gitui - History " \
-    --preview='git show --color=always {1}'
+    --preview-window wrap \
+    --preview='git show --stat=60,50 --color=always {1}' \
+    --bind "enter:execute(git show {1})"
