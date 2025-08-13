@@ -12,6 +12,7 @@ selected=$(echo "$options" | fzf +m \
     --no-input \
     --border \
     --border-label " gitui - git TUI " \
+    --list-border=none \
     --bind "enter:execute({-1})" \
     --bind "1:execute(gitui-working)" \
     --bind "2:execute(gitui-index)" \
