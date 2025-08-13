@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Shows selection of available local branches
-get_branches="git branch"
+get_branches="git branch | sort --reverse"
 
-git branch \
+git branch | sort --reverse \
     | fzf +m \
     --style full \
     --reverse \
