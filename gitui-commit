@@ -1,3 +1,17 @@
 #!/bin/bash
 
-git commit -v
+options="[1] Commit - gitui-commit-commit
+[2] Amend - gitui-commit-amend"
+
+echo "$options" \
+    | fzf +m \
+    --style full \
+    --reverse \
+    --no-input \
+    --border \
+    --border-label " gitui - Commit " \
+    --preview="git diff --staged --color=always" \
+    --bind "enter:execute({-1})" \
+    --bind "1:execute(gitui-commit-commit)" \
+    --bind "2:execute(gitui-commit-amend)"
+
