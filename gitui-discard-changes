@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+# TODO: Make this a proper bash script
+
+if [ -n "$1" ]
+then
+    read -r -k 1 "response?Do you really want to discard the changes in '$1'? "
+    echo    # (optional) move to a new line
+
+    if [[ "$response" =~ ^[Yy]$ ]]
+    then
+        git restore "$1"
+    fi
+fi
