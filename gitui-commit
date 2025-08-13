@@ -10,6 +10,7 @@ echo "$options" \
     --no-input \
     --border \
     --border-label " gitui - Commit " \
+    --preview-window wrap \
     --preview="git diff --staged --color=always" \
     --bind "enter:execute({-1})" \
     --bind "1:execute(gitui-commit-commit)" \
