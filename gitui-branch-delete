@@ -2,13 +2,24 @@
 
 # TODO: Make this a proper bash script
 
-if [ -n "$1" ]
+if [[ -n "$1" && -n "$2" ]]
 then
-    read -r -k 1 "response?Do you really want to delete '$1'? "
-    echo    # (optional) move to a new line
-
-    if [[ "$response" =~ ^[Yy]$ ]]
+    if [[ "$1" == "force" ]]
     then
-        git branch -d "$1"
+        read -r -k 1 "response?Do you really want to FORCE delete '$2'? "
+        echo
+
+        if [[ "$response" =~ ^[Yy]$ ]]
+        then
+            git branch -D "$2"
+        fi
+    else
+        read -r -k 1 "response?Do you really want to delete '$2'? "
+        echo
+
+        if [[ "$response" =~ ^[Yy]$ ]]
+        then
+            git branch -d "$2"
+        fi
     fi
 fi

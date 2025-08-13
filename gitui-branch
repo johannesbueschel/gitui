@@ -12,4 +12,5 @@ git branch \
     --preview-window wrap \
     --preview="git log --color=always --graph --abbrev-commit --decorate --first-parent main..{-1}" \
     --bind "enter:execute-silent(gitui-branch-change {-1})+reload($get_branches)" \
-    --bind "alt-backspace:execute(gitui-branch-delete {-1})+reload($get_branches)"
+    --bind "delete:execute(gitui-branch-delete normal {-1})+reload($get_branches)" \
+    --bind "ctrl-delete:execute(gitui-branch-delete force {-1})+reload($get_branches)"
