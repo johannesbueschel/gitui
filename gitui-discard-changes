@@ -12,8 +12,9 @@ then
         file_status=$(git status --short "$1")
         is_mod=$(echo "$file_status" | awk '/^?M / {print "true"}')
         is_untracked=$(echo "$file_status" | awk '/^\?\? / {print "true"}')
+        is_deleted=$(echo "$file_status" | awk '/^ D / {print "true"}')
 
-        if [[ "$is_mod" == "true" ]]
+        if [[ "$is_mod" == "true" || "$is_deleted" == "true" ]]
         then
             git restore "$1"
         elif [[ "$is_untracked" == "true" ]]
