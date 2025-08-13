@@ -14,5 +14,6 @@ echo "$options" \
     --preview="git diff --staged --color=always" \
     --bind "enter:execute({-1})" \
     --bind "1:execute(gitui-commit-commit)" \
-    --bind "2:execute(gitui-commit-amend)"
+    --bind "2:execute(gitui-commit-amend)" \
+    --bind "tab:become(gitui-working)"
 
