@@ -3,4 +3,4 @@
 git log --oneline | fzf \
     --style full -0 +m \
     --reverse \
-    --preview='git show {1}'
+    --preview='git show --color=always {1}'
