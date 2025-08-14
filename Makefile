@@ -8,7 +8,7 @@ define HELP_BODY
 	Installs gitui by creating symbolic links of all files in `~/.local/bin`.
 
 \033[1muninstall\033[0m
-	Removes the copied files (matching gitui*).
+	Removes all files in `~/.local/bin` that match `gitui*`.
 endef
 
 INSTALL_FOLDER = ~/.local/bin/
