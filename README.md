@@ -7,6 +7,8 @@ It is an experiment on what is possible with a few shell scripts and some string
 
 ## Installation
 
+You need to have fzf installed for this to work.
+
 At the moment you can only clone the repository. Afterwards, you can run one of the following commands:
 
 | Command              | Description |
@@ -46,3 +48,14 @@ The shortcuts below make the workflow as smooth as possible.
 | Commit            | 1: commit current index<br>2: amend current index<br>tab: switch to Working Directory |
 | Branch            | enter: switch to selected branch<br>del: delete branch<br>ctrl-del: force delete branch |
 | History           | enter: show commits diff |
+
+
+## Todos
+
+So many ... an unordered list:
+
+- Check if installation works on different machines
+- Check if it works on Linux
+- There is one script that is not in bash 😬 Look into it and make it a bash script
+- More functionalities for branches (push, remote branches, etc.)
+- Stash support
