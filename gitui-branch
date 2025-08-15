@@ -2,6 +2,7 @@
 
 # Shows selection of available local branches
 get_branches="git branch | sort --reverse"
+get_remote_branches="git branch -r | sort --reverse"
 
 git branch | sort --reverse \
     | fzf +m \
@@ -10,7 +11,10 @@ git branch | sort --reverse \
     --border \
     --border-label " gitui - Branches " \
     --preview-window wrap \
-    --preview="git status; echo -e \"\n\"; git log --color=always --graph --abbrev-commit --decorate --first-parent main..{-1}" \
+    --preview="git log --color=always --graph --abbrev-commit --decorate --first-parent main..{-1}" \
     --bind "enter:execute-silent(gitui-branch-change {-1})+reload($get_branches)" \
     --bind "delete:execute(gitui-branch-delete normal {-1})+reload($get_branches)" \
-    --bind "ctrl-delete:execute(gitui-branch-delete force {-1})+reload($get_branches)"
+    --bind "ctrl-delete:execute(gitui-branch-delete force {-1})+reload($get_branches)" \
+    --bind "ctrl-r:reload($get_remote_branches)" \
+    --bind "ctrl-l:reload($get_branches)" \
+    --bind "ctrl-p:execute-silent(git push origin {-1})+refresh-preview"
