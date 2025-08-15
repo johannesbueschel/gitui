@@ -59,3 +59,4 @@ So many ... an unordered list:
 - There is one script that is not in bash 😬 Look into it and make it a bash script
 - More functionalities for branches (push, remote branches, etc.)
 - Stash support
+- Match change state of files properly
