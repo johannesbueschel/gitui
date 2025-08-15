@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Shows the files in the working directory
+repo=$(basename $(pwd))
 get_files="git status --short \
     | awk '/^ M |^MM |^AM |^ D |^\?\? / {print}' \
     | cut -c 4- \
@@ -15,7 +15,7 @@ git status --short \
     --keep-right \
     --reverse \
     --border \
-    --border-label " gitui - Working directory " \
+    --border-label " gitui: $repo - Working directory " \
     --preview-window wrap \
     --preview="gitui-preview-working {}" \
     --bind "enter:execute-silent(git add {})+reload($get_files)" \

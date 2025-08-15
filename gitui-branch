@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Shows selection of available local branches
+repo=$(basename $(pwd))
 get_branches="git branch | sort --reverse"
 get_remote_branches="git branch -r | sort --reverse"
 
@@ -9,7 +9,7 @@ git branch | sort --reverse \
     --style full \
     --reverse \
     --border \
-    --border-label " gitui - Branches " \
+    --border-label " gitui: $repo - Branches " \
     --preview-window wrap \
     --preview="git log --color=always --graph --abbrev-commit --decorate --first-parent main..{-1}" \
     --bind "enter:execute-silent(gitui-branch-change {-1})+reload($get_branches)" \

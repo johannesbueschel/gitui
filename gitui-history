@@ -1,10 +1,12 @@
 #!/bin/bash
 
+repo=$(basename $(pwd))
+
 git log --oneline | fzf \
     --style full -0 +m \
     --reverse \
     --border \
-    --border-label " gitui - History " \
+    --border-label " gitui: $repo - History " \
     --preview-window wrap \
     --preview='git show --stat=60,50 --color=always {1}' \
     --bind "enter:execute(git show {1})"

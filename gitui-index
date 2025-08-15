@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Shows the staged files
+repo=$(basename $(pwd))
 get_files="git status --short \
     | awk '/^A  |^AM |^MM |^D  |^M  / {print}' \
     | cut -c 4- \
@@ -15,7 +15,7 @@ git status --short \
     --keep-right \
     --reverse \
     --border \
-    --border-label " gitui - Index " \
+    --border-label " gitui: $repo - Index " \
     --preview-window wrap \
     --preview="gitui-preview-index {}" \
     --bind "enter:execute-silent(git restore --staged {})+reload($get_files)" \

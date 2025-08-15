@@ -1,5 +1,6 @@
 #!/bin/bash
 
+repo=$(basename $(pwd))
 options="[1] Working Directory - gitui-working
 [2] Index - gitui-index
 [3] Commit - gitui-commit
@@ -11,7 +12,7 @@ echo "$options" | fzf +m \
     --reverse \
     --no-input \
     --border \
-    --border-label " gitui - Your git TUI " \
+    --border-label " gitui: $repo - Your git TUI (v0.1 alpha)" \
     --list-border=none \
     --bind "enter:execute({-1})" \
     --bind "1:execute(gitui-working)" \

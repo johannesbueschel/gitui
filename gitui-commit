@@ -1,5 +1,6 @@
 #!/bin/bash
 
+repo=$(basename $(pwd))
 options="[1] Commit - gitui-commit-commit
 [2] Amend - gitui-commit-amend"
 
@@ -9,7 +10,7 @@ echo "$options" \
     --reverse \
     --no-input \
     --border \
-    --border-label " gitui - Commit " \
+    --border-label " gitui: $repo - Commit " \
     --preview-window wrap \
     --preview="git diff --staged --color=always" \
     --bind "enter:execute({-1})+refresh-preview" \
