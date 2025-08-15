@@ -12,8 +12,8 @@ echo "$options" \
     --border-label " gitui - Commit " \
     --preview-window wrap \
     --preview="git diff --staged --color=always" \
-    --bind "enter:execute({-1})" \
-    --bind "1:execute(gitui-commit-commit)" \
-    --bind "2:execute(gitui-commit-amend)" \
+    --bind "enter:execute({-1})+refresh-preview" \
+    --bind "1:execute(gitui-commit-commit)+refresh-preview" \
+    --bind "2:execute(gitui-commit-amend)+refresh-preview" \
     --bind "tab:become(gitui-working)"
 
