@@ -46,7 +46,7 @@ The shortcuts below make the workflow as smooth as possible.
 | Working Directory | enter: stage file<br>ctrl-r: reload<br>tab/ctrl-i: switch to Index<br>ctrl-p: git patch the current file<br>ctrl-e: open file in the default editor<br>del: discard file |
 | Index             | enter: unstage file<br>ctrl-p: restore file in patch mode<br>ctrl-r:reload<br>ctrl-w: switch to Working Directory<br>tab: switch to Commit<br>ctrl-c: commit directly<br>ctrl-a: amend directly |
 | Commit            | 1: commit current index<br>2: amend current index<br>tab: switch to Working Directory |
-| Branch            | enter: switch to selected branch<br>ctrl-r: show remote branches<br>ctrl-l: show local branches<br>ctrl-p: push currently selected branch (experimental)<br>del: delete branch<br>ctrl-del: force delete branch |
+| Branch            | enter: switch to selected branch<br>ctrl-r: show remote branches<br>ctrl-l: show local branches<br>ctrl-p: push currently selected branch (experimental)<br>ctrl-f: fetch and pull<br>ctrl-c: create a new branch<br>del: delete branch<br>ctrl-del: force delete branch |
 | History           | enter: show commits diff |
 
 
@@ -57,6 +57,6 @@ So many ... an unordered list:
 - Check if installation works on different machines
 - Check if it works on Linux
 - There is one script that is not in bash 😬 Look into it and make it a bash script
-- More functionalities for branches (create branch)
+- More functionalities for history (cherry-pick!?)
 - Stash support
 - Match change state of files properly
