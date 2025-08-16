@@ -17,4 +17,5 @@ git branch | sort --reverse \
     --bind "ctrl-delete:execute(gitui-branch-delete force {-1})+reload($get_branches)" \
     --bind "ctrl-r:reload($get_remote_branches)" \
     --bind "ctrl-l:reload($get_branches)" \
-    --bind "ctrl-p:execute-silent(git push origin {-1})+refresh-preview"
+    --bind "ctrl-p:execute-silent(git push origin {-1})+refresh-preview" \
+    --bind "ctrl-f:execute-silent(git fetch; git pull)"
