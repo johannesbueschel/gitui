@@ -57,6 +57,7 @@ So many ... an unordered list:
 - Check if installation works on different machines
 - Check if it works on Linux
 - There is one script that is not in bash 😬 Look into it and make it a bash script
+- More functionalities for branches (better UX for actions)
 - More functionalities for history (cherry-pick!?)
 - Stash support
 - Match change state of files properly
