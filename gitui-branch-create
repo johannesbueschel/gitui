@@ -1,0 +1,13 @@
+#!/bin/bash
+
+repo=$(basename $(pwd))
+
+echo "" \
+    | fzf +m \
+    --style full \
+    --reverse \
+    --print-query \
+    --min-height=2 \
+    --border \
+    --border-label " gitui: $repo - Create Branch" \
+    --input-label "Enter new branch name"

@@ -18,4 +18,5 @@ git branch | sort --reverse \
     --bind "ctrl-r:reload($get_remote_branches)" \
     --bind "ctrl-l:reload($get_branches)" \
     --bind "ctrl-p:execute-silent(git push origin {-1})+refresh-preview" \
-    --bind "ctrl-f:execute-silent(git fetch; git pull)"
+    --bind "ctrl-f:execute-silent(git fetch; git pull)" \
+    --bind "ctrl-c:execute(git branch \$(gitui-branch-create))+reload($get_branches)"
